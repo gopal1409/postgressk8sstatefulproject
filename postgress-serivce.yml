@@ -1,0 +1,13 @@
+apiVersion: v1 
+kind: Service 
+metadata:
+  name: postgress 
+  labels: 
+    app: postgress 
+spec:
+  ports:
+    - name: postgress 
+      port: 5432
+  clusterIP: None #to make headless service in k8s we need to make the cluster ip as node
+  selector: 
+    app: postgress 
